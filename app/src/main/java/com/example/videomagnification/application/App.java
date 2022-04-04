@@ -38,4 +38,5 @@ public class App extends Application {
     public static void logError(String label, String text) {
         Log.e("Video Magnification", label + ": " + text);
     }
+
 }

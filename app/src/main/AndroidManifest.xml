@@ -6,6 +6,7 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:name=".application.App"
@@ -15,7 +16,8 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VideoMagnification">
+        android:theme="@style/Theme.VideoMagnification"
+        android:usesCleartextTraffic="true">
         <activity android:name=".gui.interaction.RoiSelectorActivity" />
         <activity android:name=".gui.input.VideoConverterActivity" />
         <activity android:name=".gui.interaction.VideoEditorParametersActivity" />
