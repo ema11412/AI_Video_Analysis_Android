@@ -42,17 +42,17 @@ public class MagnificatorFactory {
 //                    ((App) context.getApplication()).getAppData().getRoiX(),
 //                    ((App) context.getApplication()).getAppData().getRoiY());
 
-            return new MagnificatorGdownIdeal(
-                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
-                    ((App) context.getApplication()).getAppData().getVideoDir(),
-                    ((App) context.getApplication()).getAppData().getAlpha(),
-                    ((App) context.getApplication()).getAppData().getLevel(),
-                    ((App) context.getApplication()).getAppData().getFl(),
-                    ((App) context.getApplication()).getAppData().getFh(),
-                    ((App) context.getApplication()).getAppData().getSampling(),
-                    ((App) context.getApplication()).getAppData().getChromAtt(),
-                    ((App) context.getApplication()).getAppData().getRoiX(),
-                    ((App) context.getApplication()).getAppData().getRoiY());
+//            return new MagnificatorGdownIdeal(
+//                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
+//                    ((App) context.getApplication()).getAppData().getVideoDir(),
+//                    ((App) context.getApplication()).getAppData().getAlpha(),
+//                    ((App) context.getApplication()).getAppData().getLevel(),
+//                    ((App) context.getApplication()).getAppData().getFl(),
+//                    ((App) context.getApplication()).getAppData().getFh(),
+//                    ((App) context.getApplication()).getAppData().getSampling(),
+//                    ((App) context.getApplication()).getAppData().getChromAtt(),
+//                    ((App) context.getApplication()).getAppData().getRoiX(),
+//                    ((App) context.getApplication()).getAppData().getRoiY());
 //            // TEST 1
 //            return new MagnificatorGdownIdeal(
 //                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
@@ -66,17 +66,17 @@ public class MagnificatorFactory {
 //                    128,
 //                    15);
 //             //TEST 2
-//            return new MagnificatorGdownIdeal(
-//                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
-//                    ((App) context.getApplication()).getAppData().getVideoDir(),
-//                    150,
-//                    6,
-//                    136.8/60,
-//                    163.8/60,
-//                    25.22,
-//                    1,
-//                    292,
-//                    139);
+            return new MagnificatorGdownIdeal(
+                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
+                    ((App) context.getApplication()).getAppData().getVideoDir(),
+                    150,
+                    6,
+                    136.8/60,
+                    163.8/60,
+                    25.22,
+                    1,
+                    292,
+                    139);
         } else if (algorithmId == R.id.radio_laplacian_butterworth) {
             return new MagnificatorLpyrButter(
                     ((App) context.getApplication()).getAppData().getAviVideoPath(),
@@ -107,36 +107,77 @@ public class MagnificatorFactory {
 
         return null;
     }
-    private void getParams(){
+    public static class NetworkClient {
 
-        int alp0;
-        float lamb0;
+        public static final String BASE_URL=" http://192.168.0.114:5000/";
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://127.0.0.1:8000/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        public static Retrofit retrofit;
 
-        parameterApi parameterapi = retrofit.create(parameterApi.class);
+   /*
+    This public static method will return Retrofit client
+    anywhere in the appplication
+    */
 
-        Call<List<Params>> call = parameterapi.getParams("3");
+        public static Retrofit getRetrofitClient(){
 
-        call.enqueue(new Callback<List<Params>>() {
+            //If condition to ensure we don't create multiple retrofit instances in a single application
+            if (retrofit==null) {
+
+                //Defining the Retrofit using Builder
+                retrofit=new Retrofit.Builder()
+                        .baseUrl(BASE_URL)   //This is the only mandatory call on Builder object.
+                        .addConverterFactory(GsonConverterFactory.create()) // Convertor library used to convert response into POJO
+                        .build();
+            }
+
+            return retrofit;
+        }
+
+    }
+
+    private void getAllParams(String b64_image) {
+
+        //Obtain an instance of Retrofit by calling the static method.
+        Retrofit  retrofit= NetworkClient.getRetrofitClient();
+
+       /*
+       The main purpose of Retrofit is to create HTTP calls from the Java interface based
+       on the annotation associated with each method. This is achieved by just passing the interface
+       class as parameter to the create method
+       */
+        parameterApi parameters = retrofit.create(parameterApi.class);
+
+       /*
+       Invoke the method corresponding to the HTTP request which will return a Call object. This Call
+       object will used to send the actual network request with the specified parameters
+       */
+        Call call = parameters.getParams(b64_image);
+
+       /*
+        This is the line which actually sends a network request. Calling enqueue() executes a call asynchronously
+        It has two callback listeners which will invoked on the main thread
+        */
+        call.enqueue(new Callback() {
             @Override
-            public void onResponse(Call<List<Params>> call, Response<List<Params>> response) {
+            public void onResponse(Call call, Response response) {
+              /*This is the success callback. Though the response type is JSON, with Retrofit we get
+              the response in the form of WResponse POJO class
+              */
+                if (response.body()!=null) {
+                    Params params = (Params) response.body();
 
-                List<Params> paramsList = response.body();
-                for (Params param: paramsList){
-                    int alp0 = param.getAlp0();
-                    float lamb0 = param.getLamb0();
+                    int alp0 = params.getAlp0();
+                    int lamb0 = params.getLamb0();
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Params>> call, Throwable t) {
+            public void onFailure(Call call, Throwable t) {
+              /*
+              Error callback
+              */
 
             }
-
         });
 
     }

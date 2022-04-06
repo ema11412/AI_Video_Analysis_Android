@@ -7,9 +7,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface parameterApi {
 
-    @GET("predict/parameter/{image}")
-    Call<List<Params>> getParams(@Path("image") String image);
+    @GET("predict/parameter/")
+    Call<Params> getParams(@Query("base64_image") String base64_image);
 }
