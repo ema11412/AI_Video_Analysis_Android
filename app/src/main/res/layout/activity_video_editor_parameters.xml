@@ -16,10 +16,12 @@
         android:max="100"
         android:min="1"
         android:progress="1"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewR1" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewR1"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewR2"
@@ -29,8 +31,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/r2"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewR1" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewR1"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewR1"
@@ -40,8 +44,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/r1"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChromAtt" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewChromAtt"
+        tools:visibility="visible" />
 
     <com.example.videomagnification.utils.seekbar.AccurateSeekBar
         android:id="@+id/seek_r1"
@@ -53,10 +59,12 @@
         android:max="100"
         android:min="1"
         android:progress="1"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewChromAtt" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewChromAtt"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_video_path"
@@ -99,8 +107,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_alpha" />
+        app:layout_constraintTop_toBottomOf="@+id/text_alpha"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_level"
@@ -109,8 +119,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_lambda" />
+        app:layout_constraintTop_toBottomOf="@+id/text_lambda"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_fl"
@@ -119,8 +131,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_level" />
+        app:layout_constraintTop_toBottomOf="@+id/text_level"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_fh"
@@ -149,8 +163,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_sampling" />
+        app:layout_constraintTop_toBottomOf="@+id/text_sampling"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_r1"
@@ -159,8 +175,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_chrom_att" />
+        app:layout_constraintTop_toBottomOf="@+id/text_chrom_att"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/text_r2"
@@ -169,8 +187,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_r1" />
+        app:layout_constraintTop_toBottomOf="@+id/text_r1"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/btn_start"
@@ -192,10 +212,12 @@
         android:max="399"
         android:min="10"
         android:progress="10"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLevel" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLevel"
+        tools:visibility="visible" />
 
     <com.example.videomagnification.utils.seekbar.AccurateSeekBar
         android:id="@+id/seek_fh"
@@ -239,7 +261,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSampling" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSampling"
+        tools:visibility="visible"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView5"
@@ -263,9 +287,11 @@
         android:max="200"
         android:min="1"
         android:progress="1"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:visibility="visible" />
 
     <com.example.videomagnification.utils.seekbar.AccurateSeekBar
         android:id="@+id/seek_lambda"
@@ -277,9 +303,11 @@
         android:max="100"
         android:min="1"
         android:progress="1"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAlpha" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlpha"
+        tools:visibility="visible" />
 
     <com.example.videomagnification.utils.seekbar.AccurateSeekBar
         android:id="@+id/seek_level"
@@ -291,10 +319,12 @@
         android:max="6"
         android:min="1"
         android:progress="1"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewAlpha"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLambda" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLambda"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewAlpha"
@@ -304,8 +334,10 @@
         android:layout_marginTop="25dp"
         android:text="@string/alpha"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewLambda"
@@ -315,8 +347,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/lambda_c"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAlpha" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlpha"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewLevel"
@@ -326,8 +360,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/level"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLambda" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLambda"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewFl"
@@ -337,8 +373,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/low_frequency"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLevel" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewLevel"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewFh"
@@ -370,8 +408,10 @@
         android:layout_marginTop="20dp"
         android:text="@string/chrom_attenuation"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSampling" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSampling"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView9"
@@ -450,8 +490,10 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="10dp"
         android:text="@string/null_value"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView13"
