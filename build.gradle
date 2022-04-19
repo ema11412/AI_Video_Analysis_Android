@@ -7,11 +7,6 @@ buildscript {
     dependencies {
 
 
-        //implementation 'com.squareup.retrofit2:retrofit:latest.version'
-        //implementation 'com.squareup.retrofit2:converter-gson:atest.version'
-        //implementation 'com.github.bumptech.glide:glide:latest.version'
-
-
 
         classpath 'com.android.tools.build:gradle:7.1.1'
 
