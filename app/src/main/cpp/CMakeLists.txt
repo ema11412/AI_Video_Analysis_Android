@@ -15,7 +15,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -static-openmp")
 
 # OpenCV
 set(OpenCV_STATIC ON)
-set(OpenCV_DIR C:/OpenCV-android-sdk/sdk/native/jni)
+set(OpenCV_DIR /home/ema/Downloads/OpenCV-android-sdk/sdk/native/jni)
 find_package(OpenCV REQUIRED)
 
 # Creates and names a library, sets it as either STATIC

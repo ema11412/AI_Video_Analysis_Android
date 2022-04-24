@@ -20,29 +20,29 @@ public class MagnificatorFactory {
             // Baby 2: 150, 6, 2.33, 2.66, 30, 1, 294, 170
             // Face 2: 150, 6, 1, 1.66, 30, 1, 294, 170
             // Baby: 30, 16, 0.4, 3, 30, 0.1 -----> 24 bpm to 180 bpm
+//          return new MagnificatorGdownIdeal(
+//                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
+//                    ((App) context.getApplication()).getAppData().getVideoDir(),
+//                    ((App) context.getApplication()).getAppData().getAlpha(),
+//                    ((App) context.getApplication()).getAppData().getLevel(),
+//                    ((App) context.getApplication()).getAppData().getFl(),
+//                    ((App) context.getApplication()).getAppData().getFh(),
+//                    ((App) context.getApplication()).getAppData().getSampling(),
+//                    ((App) context.getApplication()).getAppData().getChromAtt(),
+//                    ((App) context.getApplication()).getAppData().getRoiX(),
+//                    ((App) context.getApplication()).getAppData().getRoiY());
+//            // TEST 1
             return new MagnificatorGdownIdeal(
                     ((App) context.getApplication()).getAppData().getAviVideoPath(),
                     ((App) context.getApplication()).getAppData().getVideoDir(),
-                    ((App) context.getApplication()).getAppData().getAlpha(),
-                    ((App) context.getApplication()).getAppData().getLevel(),
-                    ((App) context.getApplication()).getAppData().getFl(),
-                    ((App) context.getApplication()).getAppData().getFh(),
-                    ((App) context.getApplication()).getAppData().getSampling(),
-                    ((App) context.getApplication()).getAppData().getChromAtt(),
-                    ((App) context.getApplication()).getAppData().getRoiX(),
-                    ((App) context.getApplication()).getAppData().getRoiY());
-//            // TEST 1
-//            return new MagnificatorGdownIdeal(
-//                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
-//                    ((App) context.getApplication()).getAppData().getVideoDir(),
-//                    50,
-//                    6,
-//                    1,
-//                    10.0/6.0,
-//                    30,
-//                    1,
-//                    128,
-//                    15);
+                    50,
+                    6,
+                    1,
+                    10.0/6.0,
+                    30,
+                    1,
+                    128,
+                    15);
 //             //TEST 2
 //            return new MagnificatorGdownIdeal(
 //                    ((App) context.getApplication()).getAppData().getAviVideoPath(),
