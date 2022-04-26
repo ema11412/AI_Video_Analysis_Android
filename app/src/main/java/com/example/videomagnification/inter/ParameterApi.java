@@ -13,4 +13,6 @@ public interface ParameterApi {
 
     @GET("predict/parameter/")
     Call<Params> getParams(@Query("base64_image") String base64_image);
+
+
 }

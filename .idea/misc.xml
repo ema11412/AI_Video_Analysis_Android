@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_region_of_interest.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_video_editor_parameters.xml" value="0.35625" />
       </map>
     </option>
