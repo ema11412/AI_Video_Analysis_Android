@@ -21,7 +21,7 @@ public class MagnificatorFactory {
 
     String[] testing = new String[7];
 
-    String test = "https://i.imgur.com/d3gn4Xm.jpeg";
+    String test = "hola";
 
     String d0   = "https://i.imgur.com/7Sayp4U.jpg";
     String d1   = "https://i.imgur.com/ESI5x5V.jpg";
@@ -75,7 +75,7 @@ public class MagnificatorFactory {
     }
 
 
-    int[] pars = executeSend(d3);
+    int[] pars = executeSend(test);
 
     int alpha = pars[0];
     int lambda = pars[1];
